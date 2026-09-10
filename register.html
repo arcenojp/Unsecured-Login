@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form method="post"action="register_unsecu.php"onsubmit=" return checkpassword()">
+        <h1>REGISTER FORM</h1>
+        <label for="username">Username</label>
+        <input type="text"id="username"name="username"placeholder="Username"required>
+
+        <label for="password">Password</label>
+        <input type="password"id="password"name="password"placeholder="Password"required>
+
+        <label for="password">Confirm Password</label>
+        <input type="password"id="confirmpassword"name="confirmpassword"placeholder=" Confirm Password"required>
+
+        <label for="fullname">Fullname</label>
+        <input type="text"id="fullname"name="fullname"placeholder="Fullname"required>
+        
+        <label for="address">Address</label>
+        <input type="text"id="address"name="address"placeholder="Address"required>
+        
+        <button type="submit">Register</button>
+        <a href="login.html"class="btn">Redirect to Login</a>
+    </form>
+    </div>
+
+<script>
+function checkpassword() {
+    let password = document.getElementById("password").value;
+    let confirm = document.getElementById("confirmpassword");
+
+    if (password != confirm.value) {
+        alert("Passwords do not match!");
+        confirm.value = "";
+        return false;
+       
+    }
+
+    return true;
+}
+
+    </script>
+</body>
+</html>
